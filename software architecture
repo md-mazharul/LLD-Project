@@ -1,0 +1,34 @@
+Import time
+
+start_time = time.time()
+
+#Open the file in read mode
+text = open("TextFile.txt", encoding = 'utf8')
+
+# Create an empty dictionary
+dict_words = dict()
+
+#Loop through each line of the file
+for word i text:
+  """ remove extra space"""
+  words = word.strip()
+  
+  """Convert all alphabet into lower case"""
+  words = word.lower()
+  
+  """Create space between words"""
+  words = word.split(' ')
+  
+  """Cheak the word is repeated"""
+  for item in words:
+    if item in dict_words:
+      dict_words[item] = dict_words[item] +1
+    else:
+      dict_words[item] = 1
+
+"""Print how many time each words element"""
+for key in list(dict_words.key()):
+  print(key, ":" , dict_words[key])
+  
+"""Print how much time is needed for run time code"""
+Print("Program run for: " , time.time()- start_time)
